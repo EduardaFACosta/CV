@@ -1,11 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
+
 <body>
-    
+    <div class="content">
+        <div class="nav">
+            <img class="icon" src="/assets/nav_line.png">
+            <div class="links">
+                <a href="#start">Início</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#academic">Formação</a>
+                <a href="#experience">Experiência</a>
+                <a href="#more-info">Adicionais</a>
+            </div>
+            <img class="icon reverse" src="/assets/nav_line.png">
+        </div>
+        <div class="hero" id="start">
+            <div class="text-img-wrapper" id="text-img-wrapper">
+                <div class="text">
+                    <p><span class="big">Olá!</span> Eu sou a</p>
+                    <p class="pink">Eduarda Fernandes Alves da Costa</p>
+                    <p class="medium">Desenvolvedora Front-End</p>
+                </div>
+                <div class="img">
+                    <img src="assets/hero-divider.png" alt="">
+                    <img src="assets/pic.png" alt="">
+                </div>
+            </div>
+            <div class="sparkle-wrapper" id="sparkle-wrapper">
+                <img class="single_sparkle" src="assets/single_sparkle.svg" alt="">
+                <img class="single_sparkle" src="assets/single_sparkle.svg" alt="">
+                <img class="single_sparkle" src="assets/single_sparkle.svg" alt="">
+                <img class="single_sparkle" src="assets/single_sparkle.svg" alt="">
+                <img class="single_sparkle" src="assets/single_sparkle.svg" alt="">
+                <img class="single_sparkle" src="assets/single_sparkle.svg" alt="">
+            </div>
+        </div>
+        <div class="info">
+            <img src="assets/hexagon_icon.png" alt="">
+            <div class="text">
+                <p class="pink">Dados Pessoais</p>
+                <p>23 anos</p>
+                <p>Curitiba, PR</p>
+                <p>(41) 99752-4384</p>
+                <p>eduarda.fernandes.costa01@gmail.com</p>
+            </div>
+            <div class="dark-border"></div>
+        </div>
+        <div class="skills" id="skills">
+            <div class="title">Habilidades</div>
+            <div class="skills-wrapper">
+                <div class="skill">
+                    <div class="imgs html">
+                        <img src="./assets/html_icon.svg" alt="Ícone HTML" class="img">
+                        <img src="./assets/css_icon.svg" alt="Ícone CSS" class="img">
+                        <img src="./assets/js_icon.svg" alt="Ícone JS" class="img">
+                    </div>
+                    <p>HTML, CSS e JavaScript</p>
+                </div>
+                <div class="skill">
+                    <div class="imgs angular">
+                        <img src="./assets/angular_icon.svg" alt="ícone Angular" class="img">
+                        <img src="./assets/typescript_icon.svg" alt="ícone TypeScript" class="img">
+                    </div>
+                    <p>Angular e TypeScript</p>
+                </div>
+                <div class="skill">
+                    <div class="imgs figma">
+                        <img src="./assets/figma_icon.svg" alt="ícone Figma" class="img">
+                    </div>
+                    <p>Figma</p>
+                </div>
+                <div class="skill">
+                    <div class="imgs sql">
+                        <img src="./assets/sql_icon.svg" alt="ícone SQL" class="img">
+                    </div>
+                    <p>SQL</p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/bgLines.png" alt="" class="bg_lines">
+        <div class="academic" id="academic">
+            <div class="title">
+                <img src="./assets/graduate_icon.svg" alt="" class="img">
+                Formação Acadêmica
+            </div>
+            <div class="details-wrapper">
+                <div class="detail">
+                    <p>
+                        <span class="label">
+                            <span class="pink">Pós-Graduação</span> em <span class="pink">Design de produtos digitais -
+                                UX-UI,</span> </span>
+                    </p>
+                    <p>Faculdades Integradas Norte do Paraná ( <span class="pink">UNOPAR</span> ), </p>
+                    <p>Jun/2023 - Dez/2023.</p>
+                    <img src="./assets/academic_bg_1.svg" alt="">
+                </div>
+                <div class="detail">
+                    <p>
+                        <span class="label"><span class="pink">Graduação</span> em <span class="pink">Tecnologia em
+                                Análise e Desenvolvimento
+                                de Sistemas,</span></span>
+                    </p>
+                    <p>Universidade Federal do Paraná ( <span class="pink">UFPR</span> ),</p>
+                    <p>Jan/2019 - Set/2022.</p>
+                    <img src="./assets/academic_bg_2.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <img src="./assets/bgStars.png" alt="" class="bg_stars">
+        <div class="experience" id="experience">
+            <div class="title">
+                <img src="./assets/experience_icon.svg" alt="">
+                Experiência profissional
+            </div>
+            <ul class="jobs-wrapper">
+                <li class="job">
+                    <div class="label">
+                        <span class="pink">Desenvolvedora Front-end</span>
+                        <span> - Ubivis LTDA - 08/2022 - atual; </span>
+                    </div>
+                    <div class="desc">
+                        Desenvolvi e aprimorei interfaces para o sistema, com foco na experiência do usuário e
+                        responsividade das telas, utilizando o framework Angular acompanhado de HTML e CSS.
+                    </div>
+                </li>
+                <div class="img-wrapper"><img src="./assets/experience_separator01.svg" alt=""></div>
+                <li class="job">
+                    <div class="label">
+                        <span class="pink">Estagiária de Front-end</span>
+                        <span> - Ubivis LTDA - 02/2022 a 08/2022;</span>
+                    </div>
+                    <div class="desc">
+                        Desenvolvi novas funcionalidades para o front-end do sistema, assim como auxiliei na manutenção
+                        de funções antigas. Utilizando o framework Angular e trabalhando com a integração de bibliotecas
+                        externas e em conjunto com outras equipes de desenvolvimento.
+                    </div>
+                </li>
+                <div class="img-wrapper"><img src="./assets/experience_separator02.svg" alt=""></div>
+                <li class="job">
+                    <div class="label">
+                        <span class="pink">Estagiária de tecnologia da informação</span>
+                        <span> - Maxipas Saúde Ocupacional LTDA - 10/2021 a 02/2022.</span>
+                    </div>
+                    <div class="desc">
+                        Colaborei na implantação de um novo
+                        sistema em conjunto com o suporte a usuários sobre a utilização dos demais aplicativos e
+                        ferramentas utilizados pela empresa, além de apoiar a análise e implementação de novos
+                        processos, também ajudei em variadas soluções ao suporte da área de tecnologia em geral.
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="more-info" id="more-info">
+            <div class="left-side">
+                <div class="title">Informações adicionais:</div>
+                <ul class="info-wrapper">
+                    <li class="li-info">
+                        <span>
+                            Agi como monitora do Núcleo de Tecnologia Educacional do Setor de Educação Profissional e
+                            Tecnológica da UFPR, do período de dez/2020 até março/2021;
+                        </span>
+                    </li>
+                    <hr class="divisor">
+                    <li class="li-info">
+                        <span>Agi como voluntária no Projeto de Extensão Construindo Saberes com o Uso de
+                            Tecnologias
+                            da UFPR no período de maio/2021 a dez/2021;
+                        </span>
+                    </li>
+                    <hr class="divisor">
+                    <li class="li-info">
+                        <span>
+                            Conclui o curso de Língua Inglesa - InFlux - Com término em 2015.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <img src="./assets/more_info_star.svg" alt="">
+            </div>
+        </div>
+        <img class="bg_grid" src="./assets/bgGrid.png" alt="">
+    </div>
 </body>
+<script src="script.js"></script>
+
 </html>
