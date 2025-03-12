@@ -1,11 +1,67 @@
-setHeightAndWidth();  
-window.onresize = function (event) {//Ao redimensionar a tela, garante que atualiza o tam da div
-  setHeightAndWidth();  
+setHeightAndWidth();
+setMenu();
+
+/** */
+window.onresize = function (event) {//When resizing the page, makes sure that the items are displayed correctly
+  setHeightAndWidth();
+  setMenu();
 };
 
-function setHeightAndWidth(){
-    var text_img_wrapper_height = document.getElementById('text-img-wrapper').clientHeight;
-    var text_img_wrapper_width = document.getElementById('text-img-wrapper').clientWidth;
-    document.getElementById('sparkle-wrapper').setAttribute("style", "height:" + text_img_wrapper_height + 
+
+/**
+ * Function that verifies a div height and width ( hero section )
+ * and set another div to be same proportions ( the sparkles around it )
+ */
+function setHeightAndWidth() {
+  var text_img_wrapper_height = document.getElementById('text-img-wrapper').clientHeight;
+  var text_img_wrapper_width = document.getElementById('text-img-wrapper').clientWidth;
+  document.getElementById('sparkle-wrapper').setAttribute("style", "height:" + text_img_wrapper_height +
     "px; width:" + text_img_wrapper_width + "px");
+}
+
+/**
+ * Function that verifies the page width, 
+ * and if the page width is less than 425px consider as mobile device
+ * setting the correct nav display 
+ */
+function setMenu() {
+  var width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+
+  if (width <= 425) {
+    closeMenu();
+  }
+  else {
+    if (nav.classList.contains('open')) nav.classList.remove('open');
+    if (nav.classList.contains('close')) nav.classList.remove('close');
+    nav.getElementsByClassName('icon')[0].onclick = function () { };
+    nav.getElementsByClassName('icon')[0].src = '../assets/nav_line.png';
+  }
+}
+
+/**
+ * Function that open de collapsed menu
+ * Add open class to style nav 
+ * And remove close style of nav
+ * Also updates the icon shown
+ */
+function openMenu() {
+  var nav = document.getElementById('nav');
+  nav.classList.remove('close');
+  nav.classList.add('open');
+  nav.getElementsByClassName('icon')[0].onclick = function () { closeMenu() };
+  nav.getElementsByClassName('icon')[0].src = '../assets/close_menu_icon.svg';
+}
+
+/**
+ * Function that close/collaps the opened menu
+ * Add close class to style nav 
+ * And remove close style of nav
+ * Also updates the icon shown
+ */
+function closeMenu() {
+  var nav = document.getElementById('nav');
+  nav.classList.remove('open');
+  nav.classList.add('close');
+  nav.getElementsByClassName('icon')[0].onclick = function () { openMenu() };
+  nav.getElementsByClassName('icon')[0].src = '../assets/open_menu_icon.svg';
 }

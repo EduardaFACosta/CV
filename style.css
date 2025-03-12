@@ -1,3 +1,5 @@
+/* General styles */
+
 :root {
     --white: #FFF;
     --pink-border: #FF8AB3;
@@ -11,12 +13,13 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     background-color: #131313;
     font-family: 'Amiko', sans-serif;
 }
 
 .content {
-    width: 100%;
+    width: 100vw;
     height: auto;
     background-size: 100% 3360px;
     background-repeat: repeat-y;
@@ -27,12 +30,11 @@ body {
     display: flex;
     border-radius: 0 0 1rem 1rem;
     background-color: #111;
-    padding: 1rem 1.5rem;
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     top: 0;
     left: 0;
     width: 100vw;
@@ -42,6 +44,7 @@ body {
         gap: 1rem;
         width: 100%;
         justify-content: center;
+        padding: 1rem;
     }
 
     a {
@@ -54,12 +57,30 @@ body {
 
     .icon {
         object-fit: contain;
+        padding: 1rem;
     }
 }
+
+/* Simple reusable classes */
 
 .reverse {
     transform: rotate(180deg);
 }
+
+.big {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.medium {
+    font-size: 36px;
+}
+
+.pink {
+    color: var(--pink-border);
+}
+
+/* Sections */
 
 .hero {
     width: 99vw;
@@ -107,7 +128,7 @@ body {
 
             }
 
-            img:last-of-type {
+            .photo {
                 min-width: 100px;
                 width: 100%;
                 background-size: cover;
@@ -160,20 +181,6 @@ body {
         left: calc(100% - 8.5rem);
     }
 }
-
-.big {
-    font-size: 48px;
-    font-weight: 500;
-}
-
-.medium {
-    font-size: 36px;
-}
-
-.pink {
-    color: var(--pink-border);
-}
-
 
 .info {
     display: grid;
@@ -354,7 +361,7 @@ body {
     }
 }
 
-.bg_stars{
+.bg_stars {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -430,6 +437,7 @@ body {
         padding: 2rem;
         padding-left: 1rem;
         box-shadow: inset 0 -10px 0 var(--gray-bg-30);
+        z-index: 3;
 
         .title {
             color: var(--pink-border);
@@ -463,13 +471,437 @@ body {
 
         }
     }
+
+    .right-side {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        opacity: 0.7;
+
+        img {
+            width: 100%;
+            height: fit-content;
+            overflow: visible;
+        }
+    }
 }
 
-.bg_grid{
+.bg_grid {
     position: absolute;
     z-index: 1;
     width: 100%;
     transform: translateY(-100%);
     height: fit-content;
     mix-blend-mode: exclusion;
+}
+
+/* Responsive media queries */
+
+@media (max-width: 1024px) {
+    .skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .skills-wrapper {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 2rem;
+            width: fit-content;
+            justify-items: center;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+    }
+
+    .bg_lines {
+        transform: translateY(-30%);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav {
+        gap: 0.5rem;
+
+        .links {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: center;
+            padding: 1rem 0.5rem;
+        }
+
+        .icon {
+            object-fit: contain;
+            padding: 0.5rem;
+        }
+    }
+
+    .big {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .medium {
+        font-size: 30px;
+    }
+
+    .hero {
+        width: calc(100vw - 100px);
+        padding: 0 50px;
+        padding-top: 8rem;
+
+        .text-img-wrapper {
+            padding: 50px;
+            width: calc(100vw - 200px);
+
+            .text {
+                font-size: 30px;
+            }
+
+            .img {
+                gap: 4px;
+                padding-left: 4px;
+
+                .photo {
+                    min-width: 150px;
+                }
+            }
+        }
+    }
+
+    .info {
+        padding: 80px 0;
+
+        .text {
+            font-size: 16px;
+        }
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .skills {
+
+        .skills-wrapper {
+
+            .skill {
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .bg_lines {
+        transform: translateY(-50%);
+    }
+
+    .academic {
+        padding: 1rem;
+        margin: 80px 3rem;
+
+        .details-wrapper {
+            grid-template-columns: 1fr;
+
+            .detail {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .bg_stars {
+        height: 800px;
+        object-fit: cover;
+    }
+
+    .experience {
+        margin: 80px 3rem;
+    }
+
+    .more-info {
+        .right-side img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+
+    .bg_grid {
+        height: 700px;
+        object-fit: cover;
+        object-position: right;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .big {
+        font-size: 30px;
+    }
+
+    .medium {
+        font-size: 20px;
+    }
+
+    .open {
+        align-items: flex-start;
+        width: 100vw;
+        border-bottom: 3px solid var(--gray-bg);
+        flex-direction: row-reverse;
+
+
+        .icon:first-of-type {
+            height: 20px;
+            width: 29px;
+            padding: 8px;
+            box-shadow: 0 0 2px 1px rgb(255 255 255 / 12%);
+            border-radius: 10px;
+            margin: 1rem;
+        }
+
+        .icon:last-of-type {
+            display: none;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+    }
+
+    .close {
+        height: 50px;
+        width: 100vw;
+        justify-content: flex-end;
+        padding: 1rem 0;
+        height: fit-content;
+
+        .links {
+            display: none;
+        }
+
+        .icon:first-of-type {
+            height: 20px;
+            width: 29px;
+            padding: 8px;
+            box-shadow: 0 0 2px 1px rgb(255 255 255 / 12%);
+            border-radius: 10px;
+            margin-right: 1rem;
+        }
+
+        .icon:last-of-type {
+            display: none;
+        }
+    }
+
+    .hero {
+        width: calc(100vw - 4rem);
+        /* width: 100%; */
+        padding: 5rem 2rem 0 2rem;
+
+        .text-img-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: calc(100vw - 170px);
+
+            .img {
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+                padding: 0;
+                padding-top: 24px;
+
+                .divider {
+                    height: 30px;
+                    width: 30px;
+                    transform: rotate(90deg);
+                    object-fit: cover;
+                    overflow: visible;
+                }
+
+                .photo {
+                    min-width: 50px;
+                    max-width: 180px;
+                }
+            }
+        }
+    }
+
+    .skills {
+        width: calc(100vw - 2rem);
+        padding: 50px 0;
+        margin: 0 1rem;
+
+        .skills-wrapper {
+            grid-template-columns: 1fr !important;
+
+        }
+
+        .title {
+            font-size: 20px;
+        }
+    }
+
+    .info {
+        grid-template-columns: 150px 1fr;
+
+        img {
+            transform: rotate(90deg);
+        }
+
+        .text {
+            line-break: anywhere;
+
+            .pink {
+                font-size: 20px;
+            }
+        }
+
+        .dark-border {
+            height: calc(100% - 160px);
+            transform: translateY(79px);
+        }
+
+
+    }
+
+    .bg_lines {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .academic {
+        margin: 60px 2rem;
+
+        .title {
+            gap: 1rem;
+            font-size: 20px;
+        }
+
+        .details-wrapper {
+            .detail {
+                padding-bottom: 6rem;
+            }
+        }
+    }
+
+    .experience {
+        margin: 60px 2rem;
+
+        .title {
+            font-size: 20px;
+        }
+
+        .jobs-wrapper {
+            .img-wrapper {
+                text-align: left;
+
+                img {
+                    width: 80%;
+                    object-fit: contain;
+                }
+
+            }
+        }
+    }
+
+    .more-info {
+        .left-side {
+
+            padding: 1.5rem;
+            padding-left: 1rem;
+
+            .title {
+                font-size: 20px;
+            }
+
+            .info-wrapper {
+
+                .li-info {
+                    padding: 0.5rem;
+                    padding-right: 1rem;
+                }
+
+                .divisor {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .bg_grid {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .info {
+        grid-template-columns: 100px 1fr;
+
+        img {
+            width: 170px;
+        }
+    }
+
+    .academic {
+        padding: 0;
+
+        .title {
+            padding-bottom: 0;
+        }
+
+        .details-wrapper {
+            .detail {
+                padding: 1rem 3rem 5rem 1rem;
+            }
+        }
+    }
+
+    .experience {
+        .title {
+            padding: 1rem;
+            width: fit-content;
+        }
+
+        .jobs-wrapper {
+            padding-left: 2rem;
+
+            .job {
+                padding: 1rem;
+                padding-left: 0;
+            }
+
+            .img-wrapper {
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    .more-info {
+        grid-template-columns: 4fr 1fr;
+
+        .left-side {
+            padding: 1rem;
+
+            .info-wrapper {
+                .li-info {
+                    padding: 0;
+                    padding-right: 1rem;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }
