@@ -34,7 +34,7 @@ function setMenu() {
     if (nav.classList.contains('open')) nav.classList.remove('open');
     if (nav.classList.contains('close')) nav.classList.remove('close');
     nav.getElementsByClassName('icon')[0].onclick = function () { };
-    nav.getElementsByClassName('icon')[0].src = '../assets/nav_line.png';
+    nav.getElementsByClassName('icon')[0].src = './assets/nav_line.png';
   }
 }
 
@@ -49,7 +49,7 @@ function openMenu() {
   nav.classList.remove('close');
   nav.classList.add('open');
   nav.getElementsByClassName('icon')[0].onclick = function () { closeMenu() };
-  nav.getElementsByClassName('icon')[0].src = '../assets/close_menu_icon.svg';
+  nav.getElementsByClassName('icon')[0].src = './assets/close_menu_icon.svg';
 }
 
 /**
@@ -63,5 +63,26 @@ function closeMenu() {
   nav.classList.remove('open');
   nav.classList.add('close');
   nav.getElementsByClassName('icon')[0].onclick = function () { openMenu() };
-  nav.getElementsByClassName('icon')[0].src = '../assets/open_menu_icon.svg';
+  nav.getElementsByClassName('icon')[0].src = './assets/open_menu_icon.svg';
 }
+
+/**
+ * Function that adds "smooth" scrolling to the nav links
+ */
+$(document).ready(function () {
+  $("a").on('click', function (event) {
+    if (this.hash !== "") {
+      event.preventDefault();// Prevent default behavior
+
+      var execptions = ['#skills', '#academic', '#experience'];// Divs that needs a difference of 6rem from the start
+
+      var hash = this.hash;
+      let top = execptions.includes(hash) ? $(hash).offset().top - 96 : $(hash).offset().top;
+      $('html, body').animate({ // jQuery's animate() smooth page scroll
+        scrollTop: top
+      }, 900, function () {
+        window.location.hash = ''; // removes hash from URL to prevent "jumping" 
+      });
+    }
+  });
+});
