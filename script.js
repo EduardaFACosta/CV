@@ -26,6 +26,7 @@ function setHeightAndWidth() {
  */
 function setMenu() {
   var width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+  var nav = document.getElementById('nav');
 
   if (width <= 425) {
     closeMenu();
@@ -64,6 +65,18 @@ function closeMenu() {
   nav.classList.add('close');
   nav.getElementsByClassName('icon')[0].onclick = function () { openMenu() };
   nav.getElementsByClassName('icon')[0].src = './assets/open_menu_icon.svg';
+}
+
+/**
+ * Function that redirecs to the page with the selected language
+ */
+function setLanguage(lang) {
+  if (lang == 'pt') {
+    window.location.href = 'index.html';
+  }
+  else {
+    window.location.href = 'en.html';
+  }
 }
 
 /**
