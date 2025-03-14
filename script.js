@@ -21,14 +21,14 @@ function setHeightAndWidth() {
 
 /**
  * Function that verifies the page width, 
- * and if the page width is less than 425px consider as mobile device
+ * and if the page width is less than 900px consider as small device
  * setting the correct nav display 
  */
 function setMenu() {
   var width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
   var nav = document.getElementById('nav');
 
-  if (width <= 425) {
+  if (width <= 900) {
     closeMenu();
   }
   else {
